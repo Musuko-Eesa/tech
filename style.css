@@ -185,3 +185,34 @@ footer {
     color: #475569;
     border-top: 1px solid #1e293b;
 }
+
+/* SEO Content Section Styling */
+.seo-content {
+    padding: 5rem 10%;
+    background: #1e293b; /* Slightly lighter than the main background to differentiate */
+    border-radius: 50px 50px 0 0; /* Modern curved top */
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.seo-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #38bdf8;
+}
+
+.seo-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.seo-content strong {
+    color: white;
+    font-weight: 700;
+}
