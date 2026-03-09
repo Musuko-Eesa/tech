@@ -61,18 +61,85 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+/* Updated Hero Section with Slider */
 .hero {
-    height: 70vh;
+    height: 85vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at center, #ffffff, #f1f5f9);
+    overflow: hidden; /* Keeps the slides inside the container */
+    background-color: #ffffff;
+}
+
+/* The Slider Container */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Individual Slides */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: sliderAnimation 15s infinite; /* Cycles every 15 seconds */
+}
+
+/* High-quality Laptop Backgrounds */
+.slide:nth-child(1) {
+    background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1920');
+    animation-delay: 0s;
+}
+.slide:nth-child(2) {
+    background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1920');
+    animation-delay: 5s;
+}
+.slide:nth-child(3) {
+    background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1920');
+    animation-delay: 10s;
+}
+
+/* Soft Light Overlay to keep it "Neat and Colorful" */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75); /* Makes it look like frosted glass */
+    backdrop-filter: blur(3px); /* Adds a premium blur effect */
+    z-index: 2;
+}
+
+/* Hero Content - Higher z-index to stay on top */
+.hero-content {
+    position: relative;
+    z-index: 3;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem; /* Slightly larger for impact */
+    font-weight: 800;
     color: #0f172a;
+    line-height: 1.1;
+}
+
+/* The Animation Logic */
+@keyframes sliderAnimation {
+    0% { opacity: 0; transform: scale(1.1); }
+    5% { opacity: 1; }
+    33% { opacity: 1; }
+    38% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; }
 }
 
 .gradient-text {
